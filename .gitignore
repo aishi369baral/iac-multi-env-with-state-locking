@@ -1,0 +1,10 @@
+#terraform local files
+.terraform.lock.hcl
+.terraform/
+crash.log
+*.tfstate
+*.tfstate.backup
+
+# SSH keys
+terraform/devops-key
+terraform/devops-key.pub
