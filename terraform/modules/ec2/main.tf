@@ -53,6 +53,7 @@ resource "aws_security_group" "allow_user_to_connect" {
 
 
 
+
 resource "aws_instance" "my_instance" {
   count = var.instance_count
   ami             = var.ami

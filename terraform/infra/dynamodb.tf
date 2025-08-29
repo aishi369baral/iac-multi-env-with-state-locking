@@ -1,14 +1,13 @@
 resource "aws_dynamodb_table" "my_table" {
-    name = "${var.env}-app-table"
+    name = "remote-app-table"
     billing_mode = "PAY_PER_REQUEST"
-    hash_key = var.hash_key
+    hash_key = "LockID"
     attribute {
-      name = var.hash_key
+      name = "LockID"
       type = "S"
     }
     tags = {
-      Name = "${var.env}-app-table"
-      Environment = var.env
+      Name = "remote-table"
     }
   
 }

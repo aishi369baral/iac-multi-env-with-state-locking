@@ -1,6 +1,6 @@
 #terraform local files
 .terraform.lock.hcl
-.terraform/
+**/.terraform/*
 crash.log
 *.tfstate
 *.tfstate.backup
