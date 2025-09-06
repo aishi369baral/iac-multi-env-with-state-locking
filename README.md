@@ -100,6 +100,27 @@ terraform apply
 # terraform destroy
 ```
 
+# terraform plan
+<img width="1015" height="963" alt="dev_terraform_plan" src="https://github.com/user-attachments/assets/2a7a6601-a0f5-4835-834a-c656023cbdf9" />
+
+
+# terraform apply
+<img width="916" height="662" alt="dev_terraform_apply" src="https://github.com/user-attachments/assets/846cd1c0-7bc9-445c-945d-9ff7f3fa0279" />
+
+# EC2 Servers provisioned:
+<img width="1897" height="873" alt="dev_ec2" src="https://github.com/user-attachments/assets/b1afa404-4b91-4baf-a882-50336d793d25" />
+
+# Security Group attached to both the servers and key-pair to allow ssh into both the servers:
+<img width="1917" height="866" alt="dev_key-pair_sg" src="https://github.com/user-attachments/assets/b3487efa-062c-4008-828c-7951cda2cfcc" />
+
+# S3 bucket provisioned:
+<img width="1899" height="860" alt="dev_s3" src="https://github.com/user-attachments/assets/a8b33cb7-9270-4b98-bfb6-290ebe284ab3" />
+
+
+# Dynamodb table provisioned:
+<img width="1903" height="876" alt="dev_dynamodb" src="https://github.com/user-attachments/assets/9e5b82d9-17f7-4464-aca9-634ded1a05a0" />
+
+
 ### 3. Provision Staging Environment
 
 Creates **2 EC2 instances, 1 S3 bucket, and 1 DynamoDB table**.
