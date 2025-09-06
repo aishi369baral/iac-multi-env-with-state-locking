@@ -151,12 +151,5 @@ Terraform uses:
 
 This project is licensed under the **MIT License**. You are free to use, modify, and distribute with attribution.
 
-```
 
----
-
-✨ This README is structured, professional, and recruiter-friendly. All you’ll need to do is add your **animated GIF diagram** in `./assets/infra_animation.gif` (or change the path).  
-
-Do you want me to also create a **short “Why this project matters” section** (like real-world use cases) to make it even stronger for your resume?
-```
 
