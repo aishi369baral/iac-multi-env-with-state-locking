@@ -21,6 +21,43 @@ This ensures safe, consistent deployments across **Development**, **Staging**, a
 ## 📂 Project Structure
 ```bash
 .
+└── terraform
+    ├── dev                                 # Development environment (2 EC2, S3, DynamoDB)
+    │   ├── main.tf
+    │   ├── providers.tf
+    │   ├── terraform.tf
+    │   └── variables.tf
+    ├── devops-key
+    ├── devops-key.pub
+    ├── infra                               # Remote backend: S3 + DynamoDB for state locking
+    │   ├── bucket.tf
+    │   ├── dynamodb.tf
+    │   ├── terraform.tfstate
+    │   └── terraform.tfstate.backup
+    ├── modules
+    │   ├── dynamodb
+    │   │   ├── main.tf
+    │   │   ├── output.tf
+    │   │   └── variables.tf
+    │   ├── ec2
+    │   │   ├── main.tf
+    │   │   ├── output.tf
+    │   │   └── variables.tf
+    │   └── s3
+    │       ├── main.tf
+    │       ├── output.tf
+    │       └── variables.tf
+    ├── prod                              # Production environment (3 EC2, S3, DynamoDB)
+    │   ├── main.tf
+    │   ├── providers.tf
+    │   ├── terraform.tf
+    │   └── variables.tf
+    └── stg                               # Staging environment (2 EC2, S3, DynamoDB)
+        ├── main.tf
+        ├── providers.tf
+        ├── terraform.tf
+        └── variables.tf
+.
 ├── infra        # Remote backend: S3 + DynamoDB for state locking
 ├── dev          # Development environment (2 EC2, S3, DynamoDB)
 ├── stg          # Staging environment (2 EC2, S3, DynamoDB)
