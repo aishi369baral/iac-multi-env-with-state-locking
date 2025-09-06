@@ -131,6 +131,25 @@ terraform plan
 terraform apply
 # terraform destroy
 ```
+#### terraform plan
+<img width="916" height="701" alt="stg_terraform_plan" src="https://github.com/user-attachments/assets/b54be82a-705e-4968-ace5-d2e251795450" />
+
+
+#### terraform apply
+<img width="972" height="741" alt="stg_terraform_apply" src="https://github.com/user-attachments/assets/f98b45e7-4503-4b14-a926-82159b264426" />
+
+#### EC2 Servers provisioned:
+<img width="1915" height="662" alt="stg_ec2" src="https://github.com/user-attachments/assets/27b4be25-1c69-4970-8449-4ec148319b69" />
+
+#### Security Group attached to both the servers and key-pair to allow ssh into both the servers:
+<img width="1918" height="662" alt="stg_key-pair_sg" src="https://github.com/user-attachments/assets/a7e7affb-135a-4929-9e46-41bc758d4450" />
+
+#### S3 bucket provisioned:
+<img width="1918" height="879" alt="stg_s3" src="https://github.com/user-attachments/assets/22a17122-0136-4710-be51-2e6016d2d999" />
+
+
+#### Dynamodb table provisioned:
+<img width="1906" height="662" alt="stg_dynamodb" src="https://github.com/user-attachments/assets/2306ab19-d3ce-4849-b88a-076cf18f00b7" />
 
 ### 4. Provision Production Environment
 
@@ -143,6 +162,26 @@ terraform plan
 terraform apply
 # terraform destroy
 ```
+
+#### terraform plan
+<img width="976" height="745" alt="prod_terraform_plan" src="https://github.com/user-attachments/assets/461d2368-ffb4-46db-ba59-527a759341d1" />
+
+
+#### terraform apply
+<img width="978" height="738" alt="prod_terraform_apply" src="https://github.com/user-attachments/assets/ae57a900-9d7a-4141-92b8-2466311e7937" />
+
+#### EC2 Servers provisioned:
+<img width="1909" height="663" alt="prod_ec2" src="https://github.com/user-attachments/assets/50a80731-999f-43e4-8c7b-880281f4c7d2" />
+
+#### Security Group attached to both the servers and key-pair to allow ssh into both the servers:
+<img width="1915" height="686" alt="prod_key-pair_sg" src="https://github.com/user-attachments/assets/27f0c759-e8b1-49f1-9c4f-7fe2b7082de5" />
+
+#### S3 bucket provisioned:
+<img width="1883" height="475" alt="prod_s3" src="https://github.com/user-attachments/assets/56e37684-3e96-4568-b9e8-9ca36ad24f10" />
+
+
+#### Dynamodb table provisioned:
+<img width="1909" height="487" alt="prod_dynamodb" src="https://github.com/user-attachments/assets/cbe8b99c-f3df-4009-ad1d-29d8228d0b14" />
 
 ---
 
