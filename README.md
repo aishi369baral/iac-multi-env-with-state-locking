@@ -87,6 +87,17 @@ terraform plan
 terraform apply
 # terraform destroy
 ```
+#### terraform plan
+<img width="923" height="879" alt="infra_terraform_plan" src="https://github.com/user-attachments/assets/e62ea9d3-b813-418f-8470-96a884addf29" />
+
+#### terraform apply
+<img width="1791" height="1079" alt="infra_terraform_apply" src="https://github.com/user-attachments/assets/b82a4e27-f71f-4d7d-8658-883f19df99e0" />
+
+#### S3 bucket provisioned to store remote state .tfstate files
+<img width="1907" height="822" alt="infra_s3" src="https://github.com/user-attachments/assets/ed5eb8ac-a975-49a4-99ac-5c988bbdfc59" />
+#### Dynamodb table for state locking provisioned
+<img width="1916" height="564" alt="infra_dynamodb" src="https://github.com/user-attachments/assets/9b30766c-3b4d-4caf-9714-83842a4d5485" />
+
 
 ### 2. Provision Development Environment
 
@@ -203,6 +214,37 @@ Terraform uses:
 
 * **S3 bucket** → Stores the Terraform state file remotely.
 * **DynamoDB table** → Locks the state to prevent concurrent runs (avoiding corruption when multiple users run Terraform simultaneously).
+
+#### S3 bucket folders dev, stg, prod to store the .tfstate files of each environment separately:
+<img width="1917" height="825" alt="remote_bucket_folders" src="https://github.com/user-attachments/assets/7f8e2f32-cdca-4971-a566-b80306cbaf2a" />
+
+#### S3 bucket dev folder containing .tfstate file of dev environment
+<img width="1907" height="711" alt="remote_bucket_dev" src="https://github.com/user-attachments/assets/de7aadb4-65bd-47de-b3c9-b0a7ff003d68" />
+#### S3 bucket stg folder containing .tfstate file of stg environment
+<img width="1918" height="718" alt="remote_bucket_stg" src="https://github.com/user-attachments/assets/0ec90615-10dd-462d-8db2-5449143def5a" />
+#### S3 bucket prod folder containing .tfstate file of prod environment
+<img width="1915" height="634" alt="remote_bucket_prod" src="https://github.com/user-attachments/assets/432ccdb7-3da6-45a8-8779-97d7ad526db5" />
+#### Dynamodb table for state locking by lock id creation
+<img width="1902" height="853" alt="remote_dynamodb_columns" src="https://github.com/user-attachments/assets/4f10359e-fc28-401d-8d32-5c5084906a0e" />
+
+## 🛡️ Proof of State Locking
+
+Terraform ensures **safe concurrent operations** by using a DynamoDB table for state locking.  
+This prevents multiple users from applying changes to the same infrastructure at the same time.
+
+- **User 1** runs `terraform apply` on the **Production environment** → acquires the lock successfully.  
+- **User 2** also tries `terraform apply` on the **Production environment** → operation fails with an error since the lock is already held by User 1.  
+
+This mechanism protects the infrastructure state file from race conditions and corruption.
+
+### Example
+
+✅ **User 1 acquires state lock on Production:**
+<img width="1478" height="764" alt="lock_State_Example_user1_terminal" src="https://github.com/user-attachments/assets/6e5b5d6d-424d-4031-8948-172b7b568feb" />
+
+❌ **User 2 blocked from applying Production infra due to state lock:**
+<img width="1491" height="619" alt="lock_State_Example_Error_user2_terminal" src="https://github.com/user-attachments/assets/d71a3121-84c9-4f2a-8793-0b0a1e7eee4d" />
+
 
 ---
 
