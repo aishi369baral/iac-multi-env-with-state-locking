@@ -57,11 +57,7 @@ This ensures safe, consistent deployments across **Development**, **Staging**, a
         ├── providers.tf
         ├── terraform.tf
         └── variables.tf
-.
-├── infra        # Remote backend: S3 + DynamoDB for state locking
-├── dev          # Development environment (2 EC2, S3, DynamoDB)
-├── stg          # Staging environment (2 EC2, S3, DynamoDB)
-└── prod         # Production environment (3 EC2, S3, DynamoDB)
+
 ````
 
 ---
